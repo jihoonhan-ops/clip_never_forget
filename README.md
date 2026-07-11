@@ -20,10 +20,6 @@ The frozen representation never forgets. What collapses under sequential trainin
 
 All experiments are in [`clip_never_forgets.ipynb`](clip_never_forgets.ipynb) (Google Colab, T4 GPU).
 
-- **Dataset:** CIFAR-100, split into **10 tasks × 10 classes** ...
-
-## Setup
-
 - **Dataset:** CIFAR-100, split into **10 tasks × 10 classes** (class order shuffled with a fixed seed).
 - **Backbone:** CLIP ViT-B/32, **frozen** throughout. Image embeddings are extracted once and cached; every experiment runs on those cached features.
 - **Few-shot budget:** 16 images per class, shared by the prototype and linear-probe methods.
