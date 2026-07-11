@@ -41,7 +41,7 @@ This repo verifies the **most basic version of that premise directly**: with the
 |---|---|---|
 | Zero-shot CLIP | 0.642 | 0.118 |
 | Prototype (NCM) | 0.611 | 0.096 |
-| Seq. Linear Probe | 0.117 | 0.844 |
+| Seq. Linear Probe | 0.118 | 0.844 |
 
 *(The ~0.1 "forgetting" of zero-shot and prototype is an artifact of the growing candidate set, not memory loss — neither method ever modifies past-class representations.)*
 
@@ -51,7 +51,7 @@ Evaluating the **final** linear probe on **Task-1** samples, changing only the c
 
 | Evaluation | Candidates | Task-1 accuracy |
 |---|---|---|
-| 10-way (within task) | Task-1 classes only | **0.848** |
+| 10-way (within task) | Task-1 classes only | **0.844** |
 | 100-way (class-incremental) | all seen classes | **0.000** |
 
 Same head, same samples — yet 0.848 vs 0.000. The ability to *tell Task-1 classes apart* is fully intact; the head only loses when old and new classes **compete** as candidates. The cross-entropy updates on each new task inflate recent-class logits and suppress old ones, so predictions are funneled toward the newest classes. That is the entire failure mode — a **task-recency bias** in the head, not degraded features. (This is a known phenomenon in CIL; here it is isolated in a minimal frozen-backbone setting.)
