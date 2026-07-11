@@ -55,7 +55,7 @@ Evaluating the **final** linear probe on **Task-1** samples, changing only the c
 | 10-way (within task) | Task-1 classes only | **0.844** |
 | 100-way (class-incremental) | all seen classes | **0.000** |
 
-Same head, same samples — yet 0.848 vs 0.000. The ability to *tell Task-1 classes apart* is fully intact; the head only loses when old and new classes **compete** as candidates. The cross-entropy updates on each new task inflate recent-class logits and suppress old ones, so predictions are funneled toward the newest classes. That is the entire failure mode — a **task-recency bias** in the head, not degraded features. (This is a known phenomenon in CIL; here it is isolated in a minimal frozen-backbone setting.)
+Same head, same samples — yet 0.844 vs 0.000. The ability to *tell Task-1 classes apart* is fully intact; the head only loses when old and new classes **compete** as candidates. The cross-entropy updates on each new task inflate recent-class logits and suppress old ones, so predictions are funneled toward the newest classes. That is the entire failure mode — a **task-recency bias** in the head, not degraded features. (This is a known phenomenon in CIL; here it is isolated in a minimal frozen-backbone setting.)
 
 ## Ablation: how many shots does a prototype need?
 
