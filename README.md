@@ -29,7 +29,7 @@ This repo verifies the **most basic version of that premise directly**: with the
 
 ## Results
 
-![Main results](assets/results.png)
+![Main results](results.png)
 
 **1. The sequential linear probe collapses.** Final average accuracy drops to **0.117**, and Task-1 accuracy hits **0** after just three tasks (center panel). This is not a representation failure — see the diagnostic below.
 
@@ -58,7 +58,7 @@ Same head, same samples — yet 0.848 vs 0.000. The ability to *tell Task-1 clas
 
 ## Ablation: how many shots does a prototype need?
 
-![Shots ablation](assets/ablation_shots.png)
+![Shots ablation](ablation_shots.png)
 
 Prototype accuracy vs. shots per class, averaged over **3 sampling seeds** (±std shown).
 
