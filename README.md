@@ -77,12 +77,12 @@ If text prompts and image prototypes each work well alone, are they complementar
 |---|---|---|---|---|---|
 | Final avg. acc | 0.611 | 0.662 | **0.692** | 0.686 | 0.642 |
 
-**α = 0.5 beats both endpoints** (0.692 vs 0.642 / 0.611) → the two modalities carry complementary information. (α = 0 and α = 1 exactly recover the prototype and zero-shot numbers, sanity-checking the implementation.)
+**α = 0.5 beats both endpoints** (0.692 vs 0.642 / 0.611) -> the two modalities carry complementary information. (α = 0 and α = 1 exactly recover the prototype and zero-shot numbers, sanity-checking the implementation.)
 
 ## Key takeaways
 
 1. A frozen CLIP backbone does not forget — its representation is unchanged by construction, and class separability survives the full task sequence.
-2. Sequential fine-tuning of a linear head fails through **recency bias**, not representation loss — demonstrated by the 0.848 vs 0.000 split.
+2. Sequential fine-tuning of a linear head fails through **recency bias**, not representation loss — demonstrated by the 0.844 vs 0.000 split.
 3. A non-parametric **prototype (NCM)** classifier over frozen features is a strong, forgetting-free CIL baseline from just a few shots.
 4. **Text and image** class representations are complementary; a simple ensemble beats either alone.
 
